@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let table = new Array(5),
+        element;
+    for (let i=0; i<table.length; i++){
+        table[i] = new Array(5);
+    }
+    for (let row=0; row<table.length; row++){
+        for (var col=0; col<table[row].length; col++){
+            element=prompt("+", 0);
+            table[row][col]=element;
+        }
+    }
+    for (i=0; i<5; i++){
+        if (table[i][i]>0){
+            table[i][i]=1
+        }
+        if (table[i][i]<0){
+            table[i][i]=0
+        }
+    }
+    for (row=0; row<table.length; row++){
+        for (col=0; col<table[row].length; col++){
+            document.write(table[row][col], "  ");
+        }
+        document.write("<br>");
+    }
+    console.log(table);
+</script>
+</body>
+</html>
