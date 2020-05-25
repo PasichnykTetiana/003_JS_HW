@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let arr=[],
+        arrmin=[],
+        arrcalc=[],
+        element,
+        i,
+        sum=0,
+        max=0,
+        min=0;
+    do {
+        element=prompt("Добавить элемент", 0);
+        if (element==null){
+            break;
+        }
+        arr.push(element);
+        arrmin.push(element);
+        arrcalc.push(element);
+
+
+
+    }
+    while (element!=null);
+    console.log(arrmin);
+    document.write("Нечетные элементы массива:");
+    for (i=0; i<arrcalc.length; i++){
+        if (Number(arrcalc[i]) % 2 !==0){
+            document.write(" ", arrcalc[i], ",");
+        }
+        var a=Number(arrcalc[i]);
+        sum+=a;
+    }
+    document.write("<div>");
+    for (i=0; i<arr.length; i++){
+
+        if (Number(arr[i])<Number(arr[i+1])){
+            arr[i]=arr[i+1];
+            max=arr[i];
+
+        }
+
+
+    }
+
+    for (i=0; i<arr.length; i++){
+        if (Number(arrmin[i+1])<Number(arrmin[i])){
+            arrmin[i]=arrmin[i+1];
+            min=arrmin[i];
+        }
+        else {
+            min=arrmin[0]
+        }
+    }
+
+    document.write("Наибольший элемент: ", max);
+    document.write("<div>");
+    document.write("Наименьший элемент: ", min);
+    document.write("<div>");
+    document.write("Сумма элементов массива: ", sum);
+    document.write("<div>");
+    document.write("Cреднее арифметическое: ", sum/arr.length);
+    document.write("<div>");
+
+
+</script>
+</body>
+</html>
